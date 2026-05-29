@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<entity-facade-xml type="seed-initial">
+
+    <!-- ENUM TYPES -->
+
+    <moqui.basic.EnumerationType enumTypeId="PartyType"
+            description="Party Type"/>
+
+    <moqui.basic.EnumerationType enumTypeId="ContactMechType"
+            description="Contact Mechanism Type"/>
+
+
+    <!-- PARTY TYPE ENUMS -->
+
+    <moqui.basic.Enumeration enumId="PERSON"
+            enumTypeId="PartyType"
+            description="Person"/>
+
+    <moqui.basic.Enumeration enumId="PARTY_GROUP"
+            enumTypeId="PartyType"
+            description="Party Group"/>
+
+
+    <!-- CONTACT MECH ENUMS -->
+
+    <moqui.basic.Enumeration enumId="EMAIL"
+            enumTypeId="ContactMechType"
+            description="Email"/>
+
+    <moqui.basic.Enumeration enumId="TELECOM_NUMBER"
+            enumTypeId="ContactMechType"
+            description="Telecom Number"/>
+
+    <moqui.basic.Enumeration enumId="POSTAL_ADDRESS"
+            enumTypeId="ContactMechType"
+            description="Postal Address"/>
+
+
+    <!-- PARTY -->
+
+    <party.Party
+            partyId="P100"
+            partyTypeEnumId="PERSON"/>
+
+    <party.Person
+            partyId="P100"
+            firstName="Shrishti"
+            lastName="Jain"
+            dateOfBirth="2002-01-01"/>
+
+
+    <!-- PARTY GROUP -->
+
+    <party.Party
+            partyId="G100"
+            partyTypeEnumId="PARTY_GROUP"/>
+
+    <party.PartyGroup
+            partyId="G100"
+            groupName="HotWax Systems"
+            description="Software Company"/>
+
+
+    <!-- CONTACT MECH -->
+
+    <party.ContactMech
+            contactMechId="CM100"
+            contactMechTypeId="EMAIL"
+            infoString="shrishti@example.com"/>
+
+    <party.ContactMech
+            contactMechId="CM101"
+            contactMechTypeId="TELECOM_NUMBER"
+            infoString="+919999999999"/>
+
+
+    <!-- PARTY CONTACT MECH -->
+
+    <party.PartyContactMech
+            partyId="P100"
+            contactMechId="CM100"
+            fromDate="2026-05-29 00:00:00.000"/>
+
+    <party.PartyContactMech
+            partyId="P100"
+            contactMechId="CM101"
+            fromDate="2026-05-29 00:00:00.000"/>
+
+</entity-facade-xml>
