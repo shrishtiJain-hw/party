@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<entity-facade-xml type="seed-initial">
+
+    <moqui.security.ArtifactGroup
+            artifactGroupId="PARTY_SCREEN"
+            description="Party Screen Access"/>
+
+    <moqui.security.ArtifactGroupMember
+            artifactGroupId="PARTY_SCREEN"
+            artifactName="component://party/screen/PartyScreen.xml"
+            artifactTypeEnumId="AT_XML_SCREEN"
+            inheritAuthz="Y"/>
+
+    <moqui.security.ArtifactAuthz
+            artifactAuthzId="PARTY_SCREEN_ALL"
+            userGroupId="ALL_USERS"
+            artifactGroupId="PARTY_SCREEN"
+            authzTypeEnumId="AUTHZT_ALWAYS"
+            authzActionEnumId="AUTHZA_ALL"/>
+
+</entity-facade-xml>
