@@ -5,4 +5,15 @@
     <method type="post" require-authentication="false">
         <service name="party.PersonServices.create#Person"/>
     </method>
+    <method type="put" require-authentication="false">
+        <service name="party.PersonServices.update#Person"/>
+    </method>
+    <method type="delete" require-authentication="false">
+        <service name="party.PersonServices.delete#Person"/>
+    </method>
+    <method type="get" require-authentication="false">
+        <parameter name="partyId"/>
+        <service name="party.PersonServices.get#Person"/>
+    </method>
+
 </resource>

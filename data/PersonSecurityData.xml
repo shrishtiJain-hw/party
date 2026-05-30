@@ -8,6 +8,13 @@
             artifactName="/Person" artifactTypeEnumId="AT_REST_PATH" inheritAuthz="Y"/>
     <moqui.security.ArtifactGroupMember artifactGroupId="PERSON_REST" 
             artifactName="party.PersonServices.create#Person" artifactTypeEnumId="AT_SERVICE" inheritAuthz="Y"/>
+    <moqui.security.ArtifactGroupMember artifactGroupId="PERSON_REST" 
+            artifactName="party.PersonServices.update#Person" artifactTypeEnumId="AT_SERVICE" inheritAuthz="Y"/>
+    <moqui.security.ArtifactGroupMember artifactGroupId="PERSON_REST" 
+            artifactName="party.PersonServices.delete#Person" artifactTypeEnumId="AT_SERVICE" inheritAuthz="Y"/>
+    <moqui.security.ArtifactGroupMember artifactGroupId="PERSON_REST" 
+            artifactName="party.PersonServices.get#Person" artifactTypeEnumId="AT_SERVICE" inheritAuthz="Y"/>
+
 
     <!-- Database Entities (Moqui checks these during the script execution) -->
     <moqui.security.ArtifactGroupMember artifactGroupId="PERSON_REST" 
