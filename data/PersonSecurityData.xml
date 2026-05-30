@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed-initial">
+    <!-- Define a group for our Person API -->
+    <moqui.security.ArtifactGroup artifactGroupId="PERSON_REST" description="Person REST API Access"/>
+    
+    <!-- REST path and service -->
+    <moqui.security.ArtifactGroupMember artifactGroupId="PERSON_REST" 
+            artifactName="/Person" artifactTypeEnumId="AT_REST_PATH" inheritAuthz="Y"/>
+    <moqui.security.ArtifactGroupMember artifactGroupId="PERSON_REST" 
+            artifactName="party.PersonServices.create#Person" artifactTypeEnumId="AT_SERVICE" inheritAuthz="Y"/>
+
+    <!-- Database Entities (Moqui checks these during the script execution) -->
+    <moqui.security.ArtifactGroupMember artifactGroupId="PERSON_REST" 
+            artifactName="party.Party" artifactTypeEnumId="AT_ENTITY" inheritAuthz="Y"/>
+    <moqui.security.ArtifactGroupMember artifactGroupId="PERSON_REST" 
+            artifactName="party.Person" artifactTypeEnumId="AT_ENTITY" inheritAuthz="Y"/>
+
+    <!-- Grant access to both anonymous guests and all logged-in users -->
+    <moqui.security.ArtifactAuthz artifactAuthzId="PERSON_REST_ANON" userGroupId="anonymous" 
+            artifactGroupId="PERSON_REST" authzTypeEnumId="AUTHZT_ALWAYS" authzActionEnumId="AUTHZA_ALL"/>
+    <moqui.security.ArtifactAuthz artifactAuthzId="PERSON_REST_ALL" userGroupId="ALL_USERS" 
+            artifactGroupId="PERSON_REST" authzTypeEnumId="AUTHZT_ALWAYS" authzActionEnumId="AUTHZA_ALL"/>
+</entity-facade-xml>

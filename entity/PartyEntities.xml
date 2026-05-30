@@ -2,15 +2,10 @@
 <entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-2.1.xsd">
 
-    <!-- Party -->
     <entity entity-name="Party" package="party">
-
         <field name="partyId" type="id" is-pk="true"/>
-
         <field name="partyTypeEnumId" type="id"/>
-
         <field name="createdDate" type="date-time"/>
-
     </entity>
 
 
